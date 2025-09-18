@@ -16,5 +16,887 @@
     "source": "Website",
     "score": 75,
     "status": "Contacted"
+  },
+  {
+    "id": "3",
+    "name": "Carlos Rodriguez",
+    "company": "StartupXYZ",
+    "email": "carlos@startupxyz.com",
+    "source": "Referral",
+    "score": 85,
+    "status": "Qualified"
+  },
+  {
+    "id": "4",
+    "name": "Diana Chen",
+    "company": "Global Solutions",
+    "email": "diana@globalsolutions.net",
+    "source": "Cold Email",
+    "score": 65,
+    "status": "New"
+  },
+  {
+    "id": "5",
+    "name": "Eduardo Silva",
+    "company": "Innovation Labs",
+    "email": "eduardo@innovationlabs.org",
+    "source": "Trade Show",
+    "score": 95,
+    "status": "Contacted"
+  },
+  {
+    "id": "6",
+    "name": "Fatima Al-Rashid",
+    "company": "Desert Tech",
+    "email": "fatima@deserttech.ae",
+    "source": "LinkedIn",
+    "score": 80,
+    "status": "Qualified"
+  },
+  {
+    "id": "7",
+    "name": "George Thompson",
+    "company": "Finance Plus",
+    "email": "george@financeplus.com",
+    "source": "Website",
+    "score": 70,
+    "status": "Unqualified"
+  },
+  {
+    "id": "8",
+    "name": "Helena Kowalski",
+    "company": "Euro Dynamics",
+    "email": "helena@eurodynamics.eu",
+    "source": "Referral",
+    "score": 88,
+    "status": "New"
+  },
+  {
+    "id": "9",
+    "name": "Ivan Petrov",
+    "company": "Siberian Systems",
+    "email": "ivan@siberiansystems.ru",
+    "source": "Cold Call",
+    "score": 72,
+    "status": "Contacted"
+  },
+  {
+    "id": "10",
+    "name": "Jessica Martinez",
+    "company": "Sunny Day Corp",
+    "email": "jessica@sunnyday.com",
+    "source": "Social Media",
+    "score": 78,
+    "status": "Qualified"
+  },
+  {
+    "id": "11",
+    "name": "Kevin O'Connor",
+    "company": "Green Valley Industries",
+    "email": "kevin@greenvalley.ie",
+    "source": "Trade Show",
+    "score": 82,
+    "status": "New"
+  },
+  {
+    "id": "12",
+    "name": "Lucia Rossi",
+    "company": "Mediterranean Solutions",
+    "email": "lucia@medsolutions.it",
+    "source": "LinkedIn",
+    "score": 91,
+    "status": "Contacted"
+  },
+  {
+    "id": "13",
+    "name": "Mohammed Hassan",
+    "company": "Digital Oasis",
+    "email": "mohammed@digitaloasis.eg",
+    "source": "Website",
+    "score": 76,
+    "status": "Qualified"
+  },
+  {
+    "id": "14",
+    "name": "Nina Andersson",
+    "company": "Nordic Tech",
+    "email": "nina@nordictech.se",
+    "source": "Referral",
+    "score": 89,
+    "status": "New"
+  },
+  {
+    "id": "15",
+    "name": "Oliver Wright",
+    "company": "Cloud Nine Services",
+    "email": "oliver@cloudnine.uk",
+    "source": "Cold Email",
+    "score": 67,
+    "status": "Unqualified"
+  },
+  {
+    "id": "16",
+    "name": "Priya Sharma",
+    "company": "Mumbai Innovations",
+    "email": "priya@mumbaiinnovations.in",
+    "source": "Social Media",
+    "score": 84,
+    "status": "Contacted"
+  },
+  {
+    "id": "17",
+    "name": "Quinn Taylor",
+    "company": "Pacific Ventures",
+    "email": "quinn@pacificventures.com",
+    "source": "Trade Show",
+    "score": 93,
+    "status": "Qualified"
+  },
+  {
+    "id": "18",
+    "name": "Rachel Green",
+    "company": "Eco Solutions",
+    "email": "rachel@ecosolutions.com",
+    "source": "LinkedIn",
+    "score": 87,
+    "status": "New"
+  },
+  {
+    "id": "19",
+    "name": "Stefan Mueller",
+    "company": "Bavarian Tech",
+    "email": "stefan@bavariantech.de",
+    "source": "Website",
+    "score": 74,
+    "status": "Contacted"
+  },
+  {
+    "id": "20",
+    "name": "Takeshi Yamamoto",
+    "company": "Tokyo Digital",
+    "email": "takeshi@tokyodigital.jp",
+    "source": "Referral",
+    "score": 96,
+    "status": "Qualified"
+  },
+  {
+    "id": "21",
+    "name": "Ursula Schmidt",
+    "company": "Alpine Solutions",
+    "email": "ursula@alpinesolutions.ch",
+    "source": "Cold Call",
+    "score": 71,
+    "status": "New"
+  },
+  {
+    "id": "22",
+    "name": "Victor Popov",
+    "company": "Eastern European Tech",
+    "email": "victor@eetech.bg",
+    "source": "Trade Show",
+    "score": 83,
+    "status": "Contacted"
+  },
+  {
+    "id": "23",
+    "name": "Wendy Clark",
+    "company": "Atlantic Enterprises",
+    "email": "wendy@atlanticent.ca",
+    "source": "Social Media",
+    "score": 79,
+    "status": "Unqualified"
+  },
+  {
+    "id": "24",
+    "name": "Xavier Dubois",
+    "company": "Paris Innovation Hub",
+    "email": "xavier@parisinovation.fr",
+    "source": "LinkedIn",
+    "score": 92,
+    "status": "Qualified"
+  },
+  {
+    "id": "25",
+    "name": "Yasmin Al-Zahra",
+    "company": "Gulf Tech Solutions",
+    "email": "yasmin@gulftech.qa",
+    "source": "Website",
+    "score": 86,
+    "status": "New"
+  },
+  {
+    "id": "26",
+    "name": "Zoe Williams",
+    "company": "Southern Comfort Tech",
+    "email": "zoe@southerncomfort.au",
+    "source": "Referral",
+    "score": 77,
+    "status": "Contacted"
+  },
+  {
+    "id": "27",
+    "name": "Adam Brown",
+    "company": "Midwest Solutions",
+    "email": "adam@midwestsol.com",
+    "source": "Cold Email",
+    "score": 68,
+    "status": "New"
+  },
+  {
+    "id": "28",
+    "name": "Bella Ferrari",
+    "company": "Italian Design Co",
+    "email": "bella@italiandesign.it",
+    "source": "Trade Show",
+    "score": 94,
+    "status": "Qualified"
+  },
+  {
+    "id": "29",
+    "name": "Chen Wei",
+    "company": "Beijing Innovations",
+    "email": "chen@beijinginnovations.cn",
+    "source": "Social Media",
+    "score": 81,
+    "status": "Contacted"
+  },
+  {
+    "id": "30",
+    "name": "David Kim",
+    "company": "Seoul Tech Hub",
+    "email": "david@seoultechhub.kr",
+    "source": "LinkedIn",
+    "score": 88,
+    "status": "New"
+  },
+  {
+    "id": "31",
+    "name": "Elena Volkov",
+    "company": "Moscow Digital",
+    "email": "elena@moscowdigital.ru",
+    "source": "Website",
+    "score": 73,
+    "status": "Unqualified"
+  },
+  {
+    "id": "32",
+    "name": "Francesco Bianchi",
+    "company": "Rome Ventures",
+    "email": "francesco@romeventures.it",
+    "source": "Referral",
+    "score": 90,
+    "status": "Qualified"
+  },
+  {
+    "id": "33",
+    "name": "Grace Liu",
+    "company": "Shanghai Systems",
+    "email": "grace@shanghaissystems.cn",
+    "source": "Cold Call",
+    "score": 85,
+    "status": "Contacted"
+  },
+  {
+    "id": "34",
+    "name": "Hans Weber",
+    "company": "Berlin Startups",
+    "email": "hans@berlinstartups.de",
+    "source": "Trade Show",
+    "score": 76,
+    "status": "New"
+  },
+  {
+    "id": "35",
+    "name": "Isabella Santos",
+    "company": "Rio Tech Solutions",
+    "email": "isabella@riotech.br",
+    "source": "Social Media",
+    "score": 82,
+    "status": "Contacted"
+  },
+  {
+    "id": "36",
+    "name": "Jacques Moreau",
+    "company": "Lyon Innovations",
+    "email": "jacques@lyoninnovations.fr",
+    "source": "LinkedIn",
+    "score": 87,
+    "status": "Qualified"
+  },
+  {
+    "id": "37",
+    "name": "Katarina Novak",
+    "company": "Belgrade Tech",
+    "email": "katarina@belgradetech.rs",
+    "source": "Website",
+    "score": 74,
+    "status": "New"
+  },
+  {
+    "id": "38",
+    "name": "Luis Mendoza",
+    "company": "Mexico City Ventures",
+    "email": "luis@mexicocityventures.mx",
+    "source": "Referral",
+    "score": 91,
+    "status": "Qualified"
+  },
+  {
+    "id": "39",
+    "name": "Maria Gonzalez",
+    "company": "Barcelona Digital",
+    "email": "maria@barcelonadigital.es",
+    "source": "Cold Email",
+    "score": 69,
+    "status": "Unqualified"
+  },
+  {
+    "id": "40",
+    "name": "Nicolas Dupont",
+    "company": "Montreal Solutions",
+    "email": "nicolas@montrealsol.ca",
+    "source": "Trade Show",
+    "score": 95,
+    "status": "Contacted"
+  },
+  {
+    "id": "41",
+    "name": "Olga Petersen",
+    "company": "Copenhagen Tech",
+    "email": "olga@copenhagentech.dk",
+    "source": "Social Media",
+    "score": 83,
+    "status": "New"
+  },
+  {
+    "id": "42",
+    "name": "Paulo Silva",
+    "company": "Lisbon Innovations",
+    "email": "paulo@lisboninnovations.pt",
+    "source": "LinkedIn",
+    "score": 78,
+    "status": "Contacted"
+  },
+  {
+    "id": "43",
+    "name": "Qing Zhang",
+    "company": "Shenzhen Digital",
+    "email": "qing@shenzhendigital.cn",
+    "source": "Website",
+    "score": 89,
+    "status": "Qualified"
+  },
+  {
+    "id": "44",
+    "name": "Roberto Medici",
+    "company": "Milan Tech Hub",
+    "email": "roberto@milantechhub.it",
+    "source": "Referral",
+    "score": 72,
+    "status": "New"
+  },
+  {
+    "id": "45",
+    "name": "Sarah Johnson",
+    "company": "London Ventures",
+    "email": "sarah@londonventures.uk",
+    "source": "Cold Call",
+    "score": 86,
+    "status": "Contacted"
+  },
+  {
+    "id": "46",
+    "name": "Thomas Anderson",
+    "company": "Stockholm Solutions",
+    "email": "thomas@stockholmsol.se",
+    "source": "Trade Show",
+    "score": 94,
+    "status": "Qualified"
+  },
+  {
+    "id": "47",
+    "name": "Uma Patel",
+    "company": "Delhi Digital",
+    "email": "uma@delhidigital.in",
+    "source": "Social Media",
+    "score": 80,
+    "status": "New"
+  },
+  {
+    "id": "48",
+    "name": "Vasiliy Romanov",
+    "company": "St. Petersburg Tech",
+    "email": "vasiliy@spbtech.ru",
+    "source": "LinkedIn",
+    "score": 75,
+    "status": "Unqualified"
+  },
+  {
+    "id": "49",
+    "name": "Wilhelm Fischer",
+    "company": "Vienna Innovations",
+    "email": "wilhelm@viennainnovations.at",
+    "source": "Website",
+    "score": 88,
+    "status": "Contacted"
+  },
+  {
+    "id": "50",
+    "name": "Xiang Li",
+    "company": "Guangzhou Systems",
+    "email": "xiang@guangzhousystems.cn",
+    "source": "Referral",
+    "score": 92,
+    "status": "Qualified"
+  },
+  {
+    "id": "51",
+    "name": "Yuki Tanaka",
+    "company": "Osaka Digital",
+    "email": "yuki@osakadigital.jp",
+    "source": "Cold Email",
+    "score": 71,
+    "status": "New"
+  },
+  {
+    "id": "52",
+    "name": "Zara Ahmad",
+    "company": "Karachi Tech",
+    "email": "zara@karachitech.pk",
+    "source": "Trade Show",
+    "score": 84,
+    "status": "Contacted"
+  },
+  {
+    "id": "53",
+    "name": "Antonio Lopez",
+    "company": "Buenos Aires Ventures",
+    "email": "antonio@buenosairesventures.ar",
+    "source": "Social Media",
+    "score": 77,
+    "status": "New"
+  },
+  {
+    "id": "54",
+    "name": "Bianca Costa",
+    "company": "Sao Paulo Solutions",
+    "email": "bianca@saopaulosol.br",
+    "source": "LinkedIn",
+    "score": 93,
+    "status": "Qualified"
+  },
+  {
+    "id": "55",
+    "name": "Chang Min",
+    "company": "Busan Digital",
+    "email": "chang@busandigital.kr",
+    "source": "Website",
+    "score": 79,
+    "status": "Contacted"
+  },
+  {
+    "id": "56",
+    "name": "Dmitri Volkov",
+    "company": "Novosibirsk Tech",
+    "email": "dmitri@novosibirsktech.ru",
+    "source": "Referral",
+    "score": 85,
+    "status": "New"
+  },
+  {
+    "id": "57",
+    "name": "Emma Watson",
+    "company": "Manchester Innovations",
+    "email": "emma@manchesterinnovations.uk",
+    "source": "Cold Call",
+    "score": 73,
+    "status": "Unqualified"
+  },
+  {
+    "id": "58",
+    "name": "Felix Krueger",
+    "company": "Hamburg Solutions",
+    "email": "felix@hamburgsol.de",
+    "source": "Trade Show",
+    "score": 90,
+    "status": "Contacted"
+  },
+  {
+    "id": "59",
+    "name": "Giulia Romano",
+    "company": "Naples Tech Hub",
+    "email": "giulia@naplestechhub.it",
+    "source": "Social Media",
+    "score": 81,
+    "status": "Qualified"
+  },
+  {
+    "id": "60",
+    "name": "Hassan Ali",
+    "company": "Cairo Digital",
+    "email": "hassan@cairodigital.eg",
+    "source": "LinkedIn",
+    "score": 87,
+    "status": "New"
+  },
+  {
+    "id": "61",
+    "name": "Ingrid Larsen",
+    "company": "Oslo Ventures",
+    "email": "ingrid@osloventures.no",
+    "source": "Website",
+    "score": 76,
+    "status": "Contacted"
+  },
+  {
+    "id": "62",
+    "name": "Jun Watanabe",
+    "company": "Kyoto Innovations",
+    "email": "jun@kyotoinnovations.jp",
+    "source": "Referral",
+    "score": 94,
+    "status": "Qualified"
+  },
+  {
+    "id": "63",
+    "name": "Kristina Jovanovic",
+    "company": "Zagreb Tech",
+    "email": "kristina@zagrebtech.hr",
+    "source": "Cold Email",
+    "score": 70,
+    "status": "New"
+  },
+  {
+    "id": "64",
+    "name": "Laurent Dubois",
+    "company": "Marseille Solutions",
+    "email": "laurent@marseillesol.fr",
+    "source": "Trade Show",
+    "score": 82,
+    "status": "Contacted"
+  },
+  {
+    "id": "65",
+    "name": "Megan O'Brien",
+    "company": "Dublin Digital",
+    "email": "megan@dublindigital.ie",
+    "source": "Social Media",
+    "score": 88,
+    "status": "Qualified"
+  },
+  {
+    "id": "66",
+    "name": "Nikola Petrovic",
+    "company": "Sarajevo Tech Hub",
+    "email": "nikola@sarajevotechhub.ba",
+    "source": "LinkedIn",
+    "score": 74,
+    "status": "New"
+  },
+  {
+    "id": "67",
+    "name": "Oscar Ramirez",
+    "company": "Lima Ventures",
+    "email": "oscar@limaventures.pe",
+    "source": "Website",
+    "score": 91,
+    "status": "Contacted"
+  },
+  {
+    "id": "68",
+    "name": "Petra Novakova",
+    "company": "Prague Innovations",
+    "email": "petra@pragueinnovations.cz",
+    "source": "Referral",
+    "score": 85,
+    "status": "Qualified"
+  },
+  {
+    "id": "69",
+    "name": "Rafael Santos",
+    "company": "Porto Solutions",
+    "email": "rafael@portosol.pt",
+    "source": "Cold Call",
+    "score": 78,
+    "status": "New"
+  },
+  {
+    "id": "70",
+    "name": "Sofia Pavlov",
+    "company": "Sofia Digital",
+    "email": "sofia@sofiadigital.bg",
+    "source": "Trade Show",
+    "score": 89,
+    "status": "Contacted"
+  },
+  {
+    "id": "71",
+    "name": "Tomoko Sato",
+    "company": "Yokohama Tech",
+    "email": "tomoko@yokohamatech.jp",
+    "source": "Social Media",
+    "score": 83,
+    "status": "Unqualified"
+  },
+  {
+    "id": "72",
+    "name": "Ulrich Hoffman",
+    "company": "Frankfurt Solutions",
+    "email": "ulrich@frankfurtsol.de",
+    "source": "LinkedIn",
+    "score": 72,
+    "status": "New"
+  },
+  {
+    "id": "73",
+    "name": "Valentina Rossi",
+    "company": "Turin Ventures",
+    "email": "valentina@turinventures.it",
+    "source": "Website",
+    "score": 96,
+    "status": "Qualified"
+  },
+  {
+    "id": "74",
+    "name": "Wang Lei",
+    "company": "Chengdu Digital",
+    "email": "wang@chengdudigital.cn",
+    "source": "Referral",
+    "score": 80,
+    "status": "Contacted"
+  },
+  {
+    "id": "75",
+    "name": "Xenia Popov",
+    "company": "Bucharest Tech Hub",
+    "email": "xenia@bucharesttechhub.ro",
+    "source": "Cold Email",
+    "score": 75,
+    "status": "New"
+  },
+  {
+    "id": "76",
+    "name": "Yusuf Osman",
+    "company": "Istanbul Innovations",
+    "email": "yusuf@istanbulinnovations.tr",
+    "source": "Trade Show",
+    "score": 87,
+    "status": "Contacted"
+  },
+  {
+    "id": "77",
+    "name": "Zelda Kowalski",
+    "company": "Warsaw Solutions",
+    "email": "zelda@warsawsol.pl",
+    "source": "Social Media",
+    "score": 84,
+    "status": "Qualified"
+  },
+  {
+    "id": "78",
+    "name": "Andre Silva",
+    "company": "Recife Digital",
+    "email": "andre@recifedigital.br",
+    "source": "LinkedIn",
+    "score": 71,
+    "status": "New"
+  },
+  {
+    "id": "79",
+    "name": "Bridget Murphy",
+    "company": "Cork Tech",
+    "email": "bridget@corktech.ie",
+    "source": "Website",
+    "score": 88,
+    "status": "Contacted"
+  },
+  {
+    "id": "80",
+    "name": "Carlos Mendez",
+    "company": "Santiago Ventures",
+    "email": "carlos@santiagoventures.cl",
+    "source": "Referral",
+    "score": 92,
+    "status": "Qualified"
+  },
+  {
+    "id": "81",
+    "name": "Diana Ivanova",
+    "company": "Varna Solutions",
+    "email": "diana@varnasol.bg",
+    "source": "Cold Call",
+    "score": 77,
+    "status": "New"
+  },
+  {
+    "id": "82",
+    "name": "Erik Johansson",
+    "company": "Gothenburg Digital",
+    "email": "erik@gothenburgdigital.se",
+    "source": "Trade Show",
+    "score": 85,
+    "status": "Contacted"
+  },
+  {
+    "id": "83",
+    "name": "Francesca Ricci",
+    "company": "Bologna Tech Hub",
+    "email": "francesca@bolognatechhub.it",
+    "source": "Social Media",
+    "score": 90,
+    "status": "Unqualified"
+  },
+  {
+    "id": "84",
+    "name": "Gustav Nielsen",
+    "company": "Aarhus Innovations",
+    "email": "gustav@aarhuisinnovations.dk",
+    "source": "LinkedIn",
+    "score": 73,
+    "status": "New"
+  },
+  {
+    "id": "85",
+    "name": "Hana Svoboda",
+    "company": "Brno Solutions",
+    "email": "hana@brnosol.cz",
+    "source": "Website",
+    "score": 86,
+    "status": "Qualified"
+  },
+  {
+    "id": "86",
+    "name": "Igor Milic",
+    "company": "Ljubljana Tech",
+    "email": "igor@ljubljanatech.si",
+    "source": "Referral",
+    "score": 89,
+    "status": "Contacted"
+  },
+  {
+    "id": "87",
+    "name": "Julia Schneider",
+    "company": "Zurich Digital",
+    "email": "julia@zurichdigital.ch",
+    "source": "Cold Email",
+    "score": 74,
+    "status": "New"
+  },
+  {
+    "id": "88",
+    "name": "Klaus Wagner",
+    "company": "Salzburg Ventures",
+    "email": "klaus@salzburgventures.at",
+    "source": "Trade Show",
+    "score": 91,
+    "status": "Contacted"
+  },
+  {
+    "id": "89",
+    "name": "Lena Andersson",
+    "company": "Malmö Solutions",
+    "email": "lena@malmosol.se",
+    "source": "Social Media",
+    "score": 82,
+    "status": "Qualified"
+  },
+  {
+    "id": "90",
+    "name": "Marco Bianchi",
+    "company": "Palermo Tech Hub",
+    "email": "marco@palermotechhub.it",
+    "source": "LinkedIn",
+    "score": 78,
+    "status": "New"
+  },
+  {
+    "id": "91",
+    "name": "Nadia Volkov",
+    "company": "Minsk Digital",
+    "email": "nadia@minskdigital.by",
+    "source": "Website",
+    "score": 87,
+    "status": "Contacted"
+  },
+  {
+    "id": "92",
+    "name": "Omar Hassan",
+    "company": "Casablanca Innovations",
+    "email": "omar@casablancainnovations.ma",
+    "source": "Referral",
+    "score": 93,
+    "status": "Qualified"
+  },
+  {
+    "id": "93",
+    "name": "Paula Costa",
+    "company": "Porto Alegre Solutions",
+    "email": "paula@portoalegresol.br",
+    "source": "Cold Call",
+    "score": 76,
+    "status": "New"
+  },
+  {
+    "id": "94",
+    "name": "Quincy Adams",
+    "company": "Boston Tech",
+    "email": "quincy@bostontech.us",
+    "source": "Trade Show",
+    "score": 94,
+    "status": "Contacted"
+  },
+  {
+    "id": "95",
+    "name": "Rosa Martinez",
+    "company": "Valencia Digital",
+    "email": "rosa@valenciadigital.es",
+    "source": "Social Media",
+    "score": 81,
+    "status": "Unqualified"
+  },
+  {
+    "id": "96",
+    "name": "Sergey Petrov",
+    "company": "Yekaterinburg Tech",
+    "email": "sergey@yekaterinburgtech.ru",
+    "source": "LinkedIn",
+    "score": 85,
+    "status": "New"
+  },
+  {
+    "id": "97",
+    "name": "Tina Larsson",
+    "company": "Helsinki Ventures",
+    "email": "tina@helsinkiventures.fi",
+    "source": "Website",
+    "score": 88,
+    "status": "Contacted"
+  },
+  {
+    "id": "98",
+    "name": "Ugo Martinelli",
+    "company": "Genoa Solutions",
+    "email": "ugo@genoasol.it",
+    "source": "Referral",
+    "score": 79,
+    "status": "Qualified"
+  },
+  {
+    "id": "99",
+    "name": "Vera Novak",
+    "company": "Split Tech Hub",
+    "email": "vera@splittechhub.hr",
+    "source": "Cold Email",
+    "score": 83,
+    "status": "New"
+  },
+  {
+    "id": "100",
+    "name": "William Chen",
+    "company": "Sydney Digital",
+    "email": "william@sydneydigital.au",
+    "source": "Trade Show",
+    "score": 95,
+    "status": "Contacted"
   }
 ]
