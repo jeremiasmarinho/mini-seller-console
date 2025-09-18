@@ -1,4 +1,4 @@
-import type { Lead, LeadStatus } from "../types/domain";
+import type { LeadStatus } from "../../../types";
 
 type Props = {
   search: string;
@@ -41,7 +41,7 @@ export default function LeadFilters({
         <label className="block text-sm font-medium mb-1">Status</label>
         <select
           value={status}
-          onChange={(e) => onStatus(e.target.value as any)}
+          onChange={(e) => onStatus(e.target.value as LeadStatus | "All")}
           className="w-full rounded border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
         >
           {statuses.map((s) => (

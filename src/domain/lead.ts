@@ -9,3 +9,9 @@ export interface Lead {
   score: number;
   status: LeadStatus;
 }
+
+// validações puras (privadas ao módulo se não exportar)
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export function isValidEmail(email: string): boolean {
+  return emailRegex.test(email);
+}

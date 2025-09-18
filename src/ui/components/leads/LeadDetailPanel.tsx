@@ -1,11 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Lead, LeadStatus } from "../types/domain";
-import { patchLead } from "../services/leads";
+import type { Lead, LeadStatus } from "../../../types";
 
 type Props = {
   lead: Lead | null;
   onClose: () => void;
-  onSaved: (updated: Lead) => void;
+  onRequestSave: (args: {
+    id: string;
+    email: string;
+    status: LeadStatus;
+  }) => Promise<void>;
+  onConvert?: (lead: Lead) => void;
 };
 
 const statusOptions: LeadStatus[] = [
@@ -14,13 +18,15 @@ const statusOptions: LeadStatus[] = [
   "Qualified",
   "Unqualified",
 ];
-
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
+export default function LeadDetailPanel({
+  lead,
+  onClose,
+  onRequestSave,
+  onConvert,
+}: Props) {
   const isOpen = !!lead;
-
-  // estados locais
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<LeadStatus>("New");
   const [saving, setSaving] = useState(false);
@@ -39,10 +45,10 @@ export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
 
   const emailValid = useMemo(() => emailRegex.test(email), [email]);
   const canSave =
-    lead &&
+    !!lead &&
     !saving &&
     emailValid &&
-    (dirty || email !== lead?.email || status !== lead?.status);
+    (dirty || email !== lead.email || status !== lead.status);
 
   async function handleSave() {
     if (!lead) return;
@@ -53,23 +59,16 @@ export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
     setSaving(true);
     setError(null);
     try {
-      // simulamos um PATCH — retornamos os dados atualizados
-      await patchLead({ id: lead.id, email, status });
-      onSaved({ ...lead, email, status });
+      await onRequestSave({ id: lead.id, email, status });
       onClose();
-    } catch (e: any) {
-      setError(e?.message || "Failed to save changes.");
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : "Failed to save changes.";
+      setError(errorMessage);
     } finally {
       setSaving(false);
     }
   }
 
-  function handleCancel() {
-    // descarta alterações e fecha
-    onClose();
-  }
-
-  // acessibilidade: fecha com ESC
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape" && isOpen) onClose();
@@ -80,7 +79,6 @@ export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
 
   return (
     <>
-      {/* Backdrop */}
       <div
         className={`fixed inset-0 z-40 bg-black/30 transition-opacity ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -88,11 +86,10 @@ export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
         onClick={onClose}
         aria-hidden={!isOpen}
       />
-
-      {/* Panel */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md transform bg-white shadow-xl transition-transform
-        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md transform bg-white shadow-xl transition-transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
         role="dialog"
         aria-modal="true"
       >
@@ -175,8 +172,17 @@ export default function LeadDetailPanel({ lead, onClose, onSaved }: Props) {
             </div>
 
             <div className="flex items-center justify-end gap-2 border-t p-4">
+              {onConvert && lead && (
+                <button
+                  onClick={() => onConvert(lead)}
+                  disabled={saving}
+                  className="mr-auto rounded bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-60"
+                >
+                  Convert Lead
+                </button>
+              )}
               <button
-                onClick={handleCancel}
+                onClick={onClose}
                 disabled={saving}
                 className="rounded border px-4 py-2 text-sm hover:bg-gray-50 disabled:opacity-60"
               >
