@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Johnson",
+    "company": "Acme Inc",
+    "email": "alice@acme.com",
+    "source": "LinkedIn",
+    "score": 90,
+    "status": "New"
+  },
+  {
+    "id": "2",
+    "name": "Bob Smith",
+    "company": "TechCorp",
+    "email": "bob@techcorp.io",
+    "source": "Website",
+    "score": 75,
+    "status": "Contacted"
+  }
+]
