@@ -16,6 +16,14 @@ const statuses: (LeadStatus | "All")[] = [
   "Unqualified",
 ];
 
+const statusConfig = {
+  All: { color: "bg-slate-100 text-slate-700", icon: "📊" },
+  New: { color: "bg-blue-100 text-blue-700", icon: "🆕" },
+  Contacted: { color: "bg-amber-100 text-amber-700", icon: "📞" },
+  Qualified: { color: "bg-emerald-100 text-emerald-700", icon: "✅" },
+  Unqualified: { color: "bg-red-100 text-red-700", icon: "❌" },
+};
+
 export default function LeadFilters({
   search,
   onSearch,
@@ -24,120 +32,167 @@ export default function LeadFilters({
   onReset,
 }: Props) {
   return (
-    <div className="mb-8 relative">
-      {/* Background gradient with glass morphism */}
-      <div className="relative bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-lg shadow-blue-500/5">
-        {/* Animated gradient border */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-        
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
-          {/* Search Field */}
-          <div className="flex-1 group">
-            <label className="block text-sm font-semibold text-gray-700 mb-2 transition-colors">
-              🔍 Search Leads
-            </label>
-            <div className="relative">
-              <input
-                value={search}
-                onChange={(e) => onSearch(e.target.value)}
-                placeholder="Search by name or company..."
-                className="w-full pl-10 pr-4 py-3 bg-white/80 border border-gray-200 rounded-xl 
-                         outline-none transition-all duration-300 text-gray-700
-                         focus:border-blue-400 focus:ring-4 focus:ring-blue-100 focus:bg-white
-                         hover:border-gray-300 hover:shadow-md
-                         placeholder:text-gray-400"
-              />
-              <div className="absolute left-3 top-3.5 text-gray-400 group-focus-within:text-blue-500 transition-colors">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18L20.29 21.71A1 1 0 0 0 21.71 20.29ZM11 18A7 7 0 1 1 18 11A7 7 0 0 1 11 18Z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Status Filter */}
-          <div className="w-full sm:w-56 group">
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              📊 Status Filter
-            </label>
-            <div className="relative">
-              <select
-                value={status}
-                onChange={(e) => onStatus(e.target.value as LeadStatus | "All")}
-                className="w-full pl-4 pr-10 py-3 bg-white/80 border border-gray-200 rounded-xl 
-                         outline-none transition-all duration-300 text-gray-700 appearance-none
-                         focus:border-blue-400 focus:ring-4 focus:ring-blue-100 focus:bg-white
-                         hover:border-gray-300 hover:shadow-md cursor-pointer"
-              >
-                {statuses.map((s) => (
-                  <option key={s} value={s}>
-                    {s === "All" ? "All Statuses" : s}
-                  </option>
-                ))}
-              </select>
-              <div className="absolute right-3 top-3.5 text-gray-400 pointer-events-none group-focus-within:text-blue-500 transition-colors">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Reset Button */}
-          <div className="sm:ml-4">
-            <button
-              onClick={onReset}
-              className="w-full sm:w-auto group relative px-6 py-3 bg-gradient-to-r from-gray-50 to-gray-100 
-                       border border-gray-200 rounded-xl text-sm font-medium text-gray-700
-                       hover:from-gray-100 hover:to-gray-200 hover:border-gray-300 hover:shadow-lg
-                       active:scale-[0.98] transition-all duration-200
-                       focus:outline-none focus:ring-4 focus:ring-gray-100"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:rotate-180 transition-transform duration-300">
-                  <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4 7.58 4 12S7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12S8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z"/>
-                </svg>
-                Reset Filters
-              </span>
-            </button>
-          </div>
+    <div className="space-y-6">
+      {/* Search Bar */}
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg
+            className="w-5 h-5 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
         </div>
-
-        {/* Active filters indicator */}
-        {(search || status !== "All") && (
-          <div className="mt-4 pt-4 border-t border-gray-200/50">
-            <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-sm text-gray-600 font-medium">Active filters:</span>
-              {search && (
-                <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                  Search: "{search}"
-                  <button
-                    onClick={() => onSearch("")}
-                    className="ml-1 hover:bg-blue-200 rounded-full p-0.5 transition-colors"
-                  >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
-                    </svg>
-                  </button>
-                </span>
-              )}
-              {status !== "All" && (
-                <span className="inline-flex items-center gap-1 px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
-                  Status: {status}
-                  <button
-                    onClick={() => onStatus("All")}
-                    className="ml-1 hover:bg-purple-200 rounded-full p-0.5 transition-colors"
-                  >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
-                    </svg>
-                  </button>
-                </span>
-              )}
-            </div>
-          </div>
+        <input
+          value={search}
+          onChange={(e) => onSearch(e.target.value)}
+          placeholder="Search leads by name, company, or email..."
+          className="w-full pl-10 pr-4 py-3 bg-white/50 border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 backdrop-blur-sm"
+        />
+        {search && (
+          <button
+            onClick={() => onSearch("")}
+            className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         )}
       </div>
+
+      {/* Status Filter Tabs */}
+      <div className="flex items-center justify-between">
+        <div className="flex flex-wrap gap-2">
+          {statuses.map((s) => {
+            const config = statusConfig[s];
+            const isActive = status === s;
+            return (
+              <button
+                key={s}
+                onClick={() => onStatus(s)}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  isActive
+                    ? `${config.color} ring-2 ring-blue-500/50 shadow-lg transform scale-105`
+                    : "bg-white/50 text-slate-600 hover:bg-white hover:shadow-md hover:scale-105"
+                }`}
+              >
+                <span className="text-sm">{config.icon}</span>
+                <span>{s}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Reset Button */}
+        {(search || status !== "All") && onReset && (
+          <button
+            onClick={onReset}
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 bg-white/50 hover:bg-white rounded-full transition-all duration-200 hover:shadow-md hover:scale-105"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              />
+            </svg>
+            Reset
+          </button>
+        )}
+      </div>
+
+      {/* Active Filters Indicator */}
+      {(search || status !== "All") && (
+        <div className="flex flex-wrap gap-2 items-center p-4 bg-blue-50/50 border border-blue-200 rounded-xl backdrop-blur-sm">
+          <span className="text-sm font-medium text-slate-700">
+            Active filters:
+          </span>
+          {search && (
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+              <svg
+                className="w-3 h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              Search: "{search}"
+              <button
+                onClick={() => onSearch("")}
+                className="ml-1 hover:bg-blue-200 rounded-full p-0.5 transition-colors"
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </span>
+          )}
+          {status !== "All" && (
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
+              <span>{statusConfig[status].icon}</span>
+              Status: {status}
+              <button
+                onClick={() => onStatus("All")}
+                className="ml-1 hover:bg-purple-200 rounded-full p-0.5 transition-colors"
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }
