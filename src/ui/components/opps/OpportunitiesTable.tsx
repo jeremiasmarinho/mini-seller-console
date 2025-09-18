@@ -47,20 +47,7 @@ export default function OpportunitiesTable({ opportunities }: Props) {
   }
 
   return (
-    <div className="mt-8">
-      {/* Header with gradient */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-          <span className="text-white text-sm">💼</span>
-        </div>
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-          Sales Opportunities
-        </h2>
-        <div className="ml-auto px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-          {opportunities.length} total
-        </div>
-      </div>
-
+    <div className="p-6">
       {/* Desktop Table */}
       <div className="hidden md:block relative bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500">
         <div className="overflow-x-auto">
@@ -143,7 +130,7 @@ export default function OpportunitiesTable({ opportunities }: Props) {
       </div>
 
       {/* Mobile Cards */}
-      <div className="md:hidden space-y-4">
+      <div className="md:hidden space-y-4 mb-6">
         {opportunities.map((opp, index) => (
           <div
             key={opp.id}
@@ -183,7 +170,7 @@ export default function OpportunitiesTable({ opportunities }: Props) {
       </div>
 
       {/* Summary Stats */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 rounded-xl p-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
