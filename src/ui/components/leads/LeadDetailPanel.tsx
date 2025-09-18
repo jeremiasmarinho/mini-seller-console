@@ -467,13 +467,7 @@ export default function LeadDetailPanel({
                 </div>
               )}
             </div>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={onClose}
-                className="px-6 py-3 border border-slate-300 text-slate-700 rounded-xl font-medium hover:bg-slate-50 transition-all duration-200 hover:scale-105"
-              >
-                Cancel
-              </button>
+            <div className="flex items-center justify-end">
               <button
                 onClick={handleSave}
                 disabled={!canSave}

@@ -147,48 +147,12 @@ export default function LeadFilters({
                 />
               </svg>
               Search: "{search}"
-              <button
-                onClick={() => onSearch("")}
-                className="ml-1 hover:bg-blue-200 rounded-full p-0.5 transition-colors"
-              >
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
             </span>
           )}
           {status !== "All" && (
             <span className="inline-flex items-center gap-2 px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
               <span>{statusConfig[status].icon}</span>
               Status: {status}
-              <button
-                onClick={() => onStatus("All")}
-                className="ml-1 hover:bg-purple-200 rounded-full p-0.5 transition-colors"
-              >
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
             </span>
           )}
         </div>

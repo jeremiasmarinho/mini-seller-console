@@ -14,7 +14,7 @@ export class LeadRepoMemory implements LeadRepo, LeadRepository {
   }
 
   async findAll(): Promise<Lead[]> {
-    // primeira chamada carrega do /public/leads.json
+    // First call loads from /public/leads.json
     if (!this.data) {
       await wait(400);
       const res = await fetch("/leads.json");
@@ -33,7 +33,7 @@ export class LeadRepoMemory implements LeadRepo, LeadRepository {
 
   async update(id: string, data: UpdateLeadRequest): Promise<Lead> {
     await wait(700);
-    // ~25% falha simulada
+    // ~25% simulated failure
     if (Math.random() < 0.25) throw new Error("Simulated network error");
 
     const leads = await this.findAll();
