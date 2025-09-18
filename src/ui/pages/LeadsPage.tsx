@@ -9,6 +9,7 @@ import LeadFilters from "../components/leads/LeadFilters";
 import LeadDetailPanel from "../components/leads/LeadDetailPanel";
 import OpportunitiesTable from "../components/opps/OpportunitiesTable";
 import { PageSkeleton } from "../components/common/Skeleton";
+import { ThemeToggle } from "../components/common/ThemeToggle";
 
 export default function LeadsPage() {
   const leadRepo = useMemo(() => new LeadRepoMemory(), []);
@@ -99,41 +100,49 @@ export default function LeadsPage() {
     );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen transition-all duration-500 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950">
       <div className="p-6 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 bg-blue-500 rounded-lg">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-blue-500 rounded-lg">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 to-blue-600 bg-clip-text text-transparent dark:bg-none dark:text-slate-100 transition-all duration-500">
+                Sales Dashboard
+              </h1>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 to-blue-600 bg-clip-text text-transparent">
-              Sales Dashboard
-            </h1>
+            
+            {/* Theme Toggle */}
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-slate-600 dark:text-slate-300 font-medium hidden sm:block transition-colors duration-500">Theme</span>
+              <ThemeToggle />
+            </div>
           </div>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-600 dark:text-slate-300 text-lg transition-colors duration-500">
             Manage your leads and track opportunities in one place
           </p>
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-            <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg">
+            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 rounded-xl p-4 shadow-lg transition-all duration-500">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg transition-colors duration-500">
                   <svg
-                    className="w-5 h-5 text-blue-600"
+                    className="w-5 h-5 text-blue-600 dark:text-blue-400 transition-colors duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -147,17 +156,17 @@ export default function LeadsPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 font-medium transition-colors duration-500">
                     Total Leads
                   </p>
-                  <p className="text-2xl font-bold text-slate-700">
+                  <p className="text-2xl font-bold text-slate-700 dark:text-slate-200 transition-colors duration-500">
                     {leads.length}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg">
+            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 rounded-xl p-4 shadow-lg transition-all duration-500">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-emerald-100 rounded-lg">
                   <svg
