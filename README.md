@@ -125,12 +125,5 @@ Refer to the source for exact file locations and smaller helpers used across com
 
 ---
 
-If you'd like, I can also:
-
-- Add a short CONTRIBUTING guide and PR checklist
-- Add example unit tests for one core domain function
-- Add a GitHub Actions workflow that runs typecheck + lint + tests
-
----
 
 Author: Jeremias Marinho
