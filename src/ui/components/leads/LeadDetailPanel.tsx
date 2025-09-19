@@ -105,7 +105,7 @@ export default function LeadDetailPanel({
           zIndex: 2147483001,
           borderColor: "var(--border-glass)",
         }}
-        className={`fixed right-0 top-0 h-full w-full max-w-2xl glass-effect shadow-2xl transform transition-all duration-500 ease-out border-l ${
+        className={`fixed right-0 top-0 h-full w-full max-w-2xl glass-effect shadow-2xl transform transition-all duration-500 ease-out border-l flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"
@@ -187,7 +187,7 @@ export default function LeadDetailPanel({
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-auto h-[calc(100%-180px)] space-y-6">
+        <div className="flex-1 overflow-auto p-6 space-y-6 min-h-0">
           {lead ? (
             <>
               {/* Lead Profile Card */}
@@ -530,12 +530,12 @@ export default function LeadDetailPanel({
 
         {/* Footer Actions */}
         <div
-          className="p-6 border-t glass-card"
+          className="flex-shrink-0 p-6 border-t glass-card"
           style={{
             borderColor: "var(--border-secondary)",
           }}
         >
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               {dirty && (
                 <div className="flex items-center gap-2 text-amber-600 text-sm font-medium">
@@ -544,11 +544,11 @@ export default function LeadDetailPanel({
                 </div>
               )}
             </div>
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end w-full sm:w-auto">
               <button
                 onClick={handleSave}
                 disabled={!canSave}
-                className="relative px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-medium transition-all duration-200 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="relative w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-medium transition-all duration-200 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {saving ? (
                   <div className="flex items-center gap-2">

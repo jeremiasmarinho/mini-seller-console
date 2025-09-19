@@ -1,84 +1,136 @@
-# React + TypeScript + Vite
+# Mini Seller Console
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mini Seller Console is a lightweight React + TypeScript + Vite application built as a demo for lead triage and conversion to opportunities. It showcases a small, well-structured frontend app with a strong focus on UX, theming (light/dark), and resilient in-memory data handling for interview and portfolio review.
 
-Currently, two official plugins are available:
+This README is written to help recruiters and technical reviewers quickly understand the project, how it is organized, and where to look for key implementation details.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Quick Summary
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Stack: React 19 + TypeScript + Vite
+- Styling: Tailwind CSS (v4) + custom CSS variables for theming
+- State & Storage: local component state, context for theme, localStorage for persistence
+- Data: In-memory repositories that read `public/leads.json` and simulate latency/failures (used for optimistic updates and rollback)
 
-````js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Live locally (fast)
 
-      # Mini Seller Console
+1. Install dependencies:
 
-      Lightweight React + Vite + Tailwind demo for triaging Leads and converting them into Opportunities.
+```powershell
+npm install
+```
 
-      ## Goals implemented (MVP)
+2. Start the dev server:
 
-      1. Leads List
-      - Loads from `public/leads.json` (simulated latency in the memory repo).
-      - Fields: `id, name, company, email, source, score, status`.
-      - Search (name/company), filter (status), default sort by score desc.
+```powershell
+npm run dev
+```
 
-      2. Lead Detail Panel
-      - Click a row to open slide-over panel.
-      - Inline edit: email and status (email validated).
-      - Save/cancel with basic error handling and optimistic update + rollback.
+Open the URL printed by Vite (e.g. `http://localhost:5173`).
 
-      3. Convert to Opportunity
-      - Convert lead to opportunity; stored in memory repo and shown in Opportunities table.
+Build for production:
 
-      4. UX / States
-      - Loading skeletons, empty states, and error states included.
-      - Designed to handle ~100 leads (see `public/leads.json`).
+```powershell
+npm run build
+```
 
-      ## Nice-to-haves implemented
-      - Persist filters (`search` and `status`) in `localStorage`.
-      - Optimistic updates with rollback on simulated failure (see `LeadRepoMemory.patch`).
-      - Responsive layout (cards for mobile, table for desktop).
+Preview the production build:
 
-      ## How to run
+```powershell
+npm run preview
+```
 
-      1. Install dependencies
+---
 
-      ```powershell
-      npm install
-      ```
+## Project goals & implemented features
 
-      2. Run dev server
+- Leads list with search, filtering, and sorting
+- Slide-over lead detail panel with inline editing and simple validation
+- Convert lead → opportunity flow (in-memory) with timeline updates
+- Optimistic UI updates and rollback on simulated repository failure
+- Responsive layout (cards on mobile, table on desktop)
+- Light and dark themes implemented via CSS variables and a ThemeContext provider
+- Accessibility-minded markup and keyboard focus handling for dialogs
 
-      ```powershell
-      npm run dev
-      ```
+---
 
-      Open the URL printed by Vite (e.g. `http://localhost:5175`).
+## Folder structure (high level)
 
-      ## Notes for reviewers
+- `src/`
 
-      - Data layer: `src/infra/memory/*` implements in-memory repos that read `public/leads.json` and simulate latency/failures.
-      - Convert logic: `src/app/usecases/convertLead.ts`.
+  - `app/` – domain/use-case logic (convert lead use case)
+  - `infra/` – repositories and adapters (in-memory repo implementations)
+  - `ui/`
+    - `components/` – reusable UI pieces (header, statistics, lead list, detail panel)
+    - `pages/` – page-level components (LeadsPage)
+    - `hooks/` – custom hooks (useLeads, useLeadFilters, useLeadData)
+  - `contexts/` – `ThemeContext` and theme helpers
+  - `main.tsx` – app entry
 
-      ## Possible improvements (optional)
-      - Virtualize the leads table when rendering thousands of rows (react-window) for performance.
-      - Add unit tests (vitest) for domain functions and repository failure handling.
-      - Replace in-memory repo with a real backend API.
+- `public/` – static assets and `leads.json` (seed data)
+- `index.css` – Tailwind import plus CSS variables theme system and glassmorphism utilities
+- `vite.config.ts`, `tsconfig.json`, ESLint/Tailwind configs
 
-      Author: Candidate
-````
+Refer to the source for exact file locations and smaller helpers used across components.
+
+---
+
+## Theming and visual system
+
+- Tailwind v4 is used for utility classes but dark-mode was implemented using a custom CSS variable approach to avoid conflicts with Tailwind v4 dark utilities. The application exposes a `ThemeContext` + `useTheme` hook to toggle and persist theme to `localStorage`.
+- Colors, borders, and icon backgrounds are mapped to CSS variables in `src/index.css` (e.g. `--bg-primary`, `--text-primary`, `--icon-bg-blue`). A `.dark` class applied to the document root flips the variable set.
+- Glassmorphism: additional utilities like `.glass-effect` and `.glass-card` were added to produce a modern frosted-glass UI with `backdrop-filter` and subtle borders.
+
+---
+
+## Data layer and behavior
+
+- Data is intentionally in-memory for this demo: see `src/infra/memory/LeadRepoMemory.ts` and `OppRepoMemory.ts`.
+- `public/leads.json` contains seed data. The memory repo simulates latency and occasional failures so the UI demonstrates optimistic updates + rollback logic.
+- The convert flow is implemented as a use-case in `src/app` and wired to the UI via hooks.
+
+---
+
+## Key implementation notes (what to highlight during interviews)
+
+- Theme implementation: explain why CSS variables+document class were used instead of Tailwind dark utilities (compatibility with Tailwind v4 and reliable runtime switching).
+- Optimistic updates: how the memory repo simulates failures and how rollback is handled in the UI.
+- Component structure and separation of concerns: domain/use-case vs infra vs ui.
+- Accessibility and keyboard interactions for the slide-over panel.
+- Performance considerations and next steps (virtualization for large datasets, memoization).
+
+---
+
+## Suggestions for follow-ups and improvements
+
+- Add unit and integration tests (Vitest + React Testing Library) for domain logic and critical components.
+- Add e2e tests (Playwright) to cover user flows like search, filter, convert.
+- Introduce a small backend or mock server (msw) and swap the in-memory repo with an HTTP adapter.
+- Add CI (GitHub Actions) with lint, typecheck, and tests.
+
+---
+
+## For recruiters — quick talking points
+
+- Candidate: Jeremias Marinho — Full-stack developer
+- Project demonstrates UI craftsmanship with modern CSS (glassmorphism), theme persistence, and UX details (skeletons, empty & error states).
+- Strong focus areas to ask about in an interview:
+  - Theme design decisions and implementation
+  - How optimistic updates and rollback are implemented and tested
+  - Component composition and separation of domain logic
+  - Performance trade-offs and potential scaling strategies
+
+---
+
+If you'd like, I can also:
+
+- Add a short CONTRIBUTING guide and PR checklist
+- Add example unit tests for one core domain function
+- Add a GitHub Actions workflow that runs typecheck + lint + tests
+
+---
+
+Author: Jeremias Marinho
