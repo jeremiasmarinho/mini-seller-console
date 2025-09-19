@@ -10,10 +10,9 @@ export function AppHeader({ title, subtitle }: AppHeaderProps) {
 
   return (
     <header
-      className="backdrop-blur-sm border-b sticky top-0 z-40"
+      className="glass-effect border-b sticky top-0 z-40"
       style={{
-        backgroundColor: "var(--bg-secondary)",
-        borderColor: "var(--border-secondary)",
+        borderColor: "var(--border-glass)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">

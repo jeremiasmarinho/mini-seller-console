@@ -103,10 +103,9 @@ export default function LeadDetailPanel({
         data-panel
         style={{
           zIndex: 2147483001,
-          backgroundColor: "var(--bg-secondary)",
-          borderColor: "var(--border-secondary)",
+          borderColor: "var(--border-glass)",
         }}
-        className={`fixed right-0 top-0 h-full w-full max-w-2xl backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out border-l ${
+        className={`fixed right-0 top-0 h-full w-full max-w-2xl glass-effect shadow-2xl transform transition-all duration-500 ease-out border-l ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"
@@ -193,10 +192,9 @@ export default function LeadDetailPanel({
             <>
               {/* Lead Profile Card */}
               <div
-                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                className="glass-card rounded-2xl p-6"
                 style={{
-                  backgroundColor: "var(--bg-secondary)",
-                  borderColor: "var(--border-primary)",
+                  borderColor: "var(--border-secondary)",
                 }}
               >
                 <div className="flex items-center gap-4 mb-6">
@@ -265,10 +263,9 @@ export default function LeadDetailPanel({
 
               {/* Email Field */}
               <div
-                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                className="glass-card rounded-2xl p-6"
                 style={{
-                  backgroundColor: "var(--bg-secondary)",
-                  borderColor: "var(--border-primary)",
+                  borderColor: "var(--border-secondary)",
                 }}
               >
                 <label
@@ -370,11 +367,11 @@ export default function LeadDetailPanel({
               </div>
 
               {/* Status Field */}
+              {/* Status Field */}
               <div
-                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                className="glass-card rounded-2xl p-6"
                 style={{
-                  backgroundColor: "var(--bg-secondary)",
-                  borderColor: "var(--border-primary)",
+                  borderColor: "var(--border-secondary)",
                 }}
               >
                 <label
@@ -533,9 +530,8 @@ export default function LeadDetailPanel({
 
         {/* Footer Actions */}
         <div
-          className="p-6 border-t backdrop-blur-sm"
+          className="p-6 border-t glass-card"
           style={{
-            backgroundColor: "var(--bg-secondary)",
             borderColor: "var(--border-secondary)",
           }}
         >

@@ -27,10 +27,9 @@ export function StatCard({ title, value, icon, colorScheme }: StatCardProps) {
 
   return (
     <div
-      className="backdrop-blur-sm rounded-2xl p-6 border shadow-lg"
+      className="glass-card rounded-2xl p-6 transition-all duration-300 hover:scale-105"
       style={{
-        backgroundColor: "var(--bg-secondary)",
-        borderColor: "var(--border-primary)",
+        borderColor: "var(--border-secondary)",
       }}
     >
       <div className="flex items-center justify-between">
