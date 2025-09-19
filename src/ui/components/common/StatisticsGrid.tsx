@@ -9,24 +9,16 @@ interface StatCardProps {
 
 const colorSchemes = {
   blue: {
-    background: "bg-blue-100",
-    text: "text-blue-600",
-    value: "text-slate-800",
+    iconColor: "#2563eb",
   },
   emerald: {
-    background: "bg-emerald-100",
-    text: "text-emerald-600",
-    value: "text-emerald-600",
+    iconColor: "#059669",
   },
   purple: {
-    background: "bg-purple-100",
-    text: "text-purple-600",
-    value: "text-purple-600",
+    iconColor: "#7c3aed",
   },
   amber: {
-    background: "bg-amber-100",
-    text: "text-amber-600",
-    value: "text-amber-600",
+    iconColor: "#d97706",
   },
 };
 
@@ -34,16 +26,35 @@ export function StatCard({ title, value, icon, colorScheme }: StatCardProps) {
   const colors = colorSchemes[colorScheme];
 
   return (
-    <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
+    <div
+      className="backdrop-blur-sm rounded-2xl p-6 border shadow-lg"
+      style={{
+        backgroundColor: "var(--bg-secondary)",
+        borderColor: "var(--border-primary)",
+      }}
+    >
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-600">{title}</p>
-          <p className={`text-2xl font-bold ${colors.value}`}>{value}</p>
+          <p
+            className="text-sm font-medium"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {title}
+          </p>
+          <p
+            className="text-2xl font-bold"
+            style={{ color: "var(--text-primary)" }}
+          >
+            {value}
+          </p>
         </div>
         <div
-          className={`w-12 h-12 ${colors.background} rounded-xl flex items-center justify-center`}
+          className="w-12 h-12 rounded-xl flex items-center justify-center"
+          style={{
+            backgroundColor: `var(--icon-bg-${colorScheme})`,
+          }}
         >
-          <div className={colors.text}>{icon}</div>
+          <div style={{ color: colors.iconColor }}>{icon}</div>
         </div>
       </div>
     </div>

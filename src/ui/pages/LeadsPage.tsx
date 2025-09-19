@@ -81,7 +81,13 @@ export default function LeadsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div
+      className="min-h-screen"
+      style={{
+        background:
+          "linear-gradient(to bottom right, var(--bg-gradient-from), var(--bg-gradient-via), var(--bg-gradient-to))",
+      }}
+    >
       <AppHeader
         title="Mini Seller Console"
         subtitle="Lead Management Platform"
@@ -114,10 +120,16 @@ export default function LeadsPage() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                <h2
+                  className="text-2xl font-bold"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   Lead Pipeline
                 </h2>
-                <p className="text-sm text-slate-600 font-medium">
+                <p
+                  className="text-sm font-medium"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   Manage and track your sales leads
                 </p>
               </div>
@@ -125,8 +137,17 @@ export default function LeadsPage() {
           </div>
         </div>
 
-        <div className="mt-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg">
-          <div className="p-6 border-b border-slate-200/50">
+        <div
+          className="mt-6 backdrop-blur-sm rounded-2xl border shadow-lg"
+          style={{
+            backgroundColor: "var(--bg-secondary)",
+            borderColor: "var(--border-primary)",
+          }}
+        >
+          <div
+            className="p-6 border-b"
+            style={{ borderColor: "var(--border-secondary)" }}
+          >
             <LeadFilters
               search={search}
               onSearch={setSearch}
@@ -142,8 +163,17 @@ export default function LeadsPage() {
         </div>
 
         {opps.length > 0 && (
-          <div className="mt-8 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg">
-            <div className="p-6 border-b border-slate-200/50">
+          <div
+            className="mt-8 backdrop-blur-sm rounded-2xl border shadow-lg"
+            style={{
+              backgroundColor: "var(--bg-secondary)",
+              borderColor: "var(--border-primary)",
+            }}
+          >
+            <div
+              className="p-6 border-b"
+              style={{ borderColor: "var(--border-secondary)" }}
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
                   <svg
@@ -161,10 +191,16 @@ export default function LeadsPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <h3
+                    className="text-2xl font-bold"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     Active Opportunities
                   </h3>
-                  <p className="text-sm text-slate-600 font-medium">
+                  <p
+                    className="text-sm font-medium"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Converted leads in your sales pipeline
                   </p>
                 </div>

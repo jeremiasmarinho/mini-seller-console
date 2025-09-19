@@ -1,9 +1,12 @@
 import LeadsPage from "./ui/pages/LeadsPage";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <LeadsPage />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen">
+        <LeadsPage />
+      </div>
+    </ThemeProvider>
   );
 }

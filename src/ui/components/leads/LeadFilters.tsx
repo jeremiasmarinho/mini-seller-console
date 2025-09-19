@@ -37,10 +37,11 @@ export default function LeadFilters({
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg
-            className="w-5 h-5 text-slate-400"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            style={{ color: "var(--text-secondary)" }}
           >
             <path
               strokeLinecap="round"
@@ -54,7 +55,7 @@ export default function LeadFilters({
           value={search}
           onChange={(e) => onSearch(e.target.value)}
           placeholder="Search leads by name, company, or email..."
-          className="w-full pl-10 pr-4 py-3 bg-white/50 border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 backdrop-blur-sm"
+          className="w-full pl-10 pr-4 py-3 bg-white/50 border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 backdrop-blur-sm search-input"
         />
         {search && (
           <button

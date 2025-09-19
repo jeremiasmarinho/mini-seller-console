@@ -101,15 +101,22 @@ export default function LeadDetailPanel({
       {/* Premium Panel */}
       <aside
         data-panel
-        style={{ zIndex: 2147483001 }}
-        className={`fixed right-0 top-0 h-full w-full max-w-2xl bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out border-l border-slate-200/50 ${
+        style={{
+          zIndex: 2147483001,
+          backgroundColor: "var(--bg-secondary)",
+          borderColor: "var(--border-secondary)",
+        }}
+        className={`fixed right-0 top-0 h-full w-full max-w-2xl backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out border-l ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"
         aria-modal="true"
       >
         {/* Header with gradient */}
-        <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-6 border-b border-slate-200/50">
+        <div
+          className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-6 border-b"
+          style={{ borderColor: "var(--border-secondary)" }}
+        >
           <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -185,7 +192,13 @@ export default function LeadDetailPanel({
           {lead ? (
             <>
               {/* Lead Profile Card */}
-              <div className="bg-white/60 border border-slate-200 rounded-2xl p-6 backdrop-blur-sm shadow-lg">
+              <div
+                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                style={{
+                  backgroundColor: "var(--bg-secondary)",
+                  borderColor: "var(--border-primary)",
+                }}
+              >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative">
                     <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
@@ -198,14 +211,26 @@ export default function LeadDetailPanel({
                     <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full border-3 border-white shadow-lg"></div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-2xl font-bold text-slate-800">
+                    <h4
+                      className="text-2xl font-bold"
+                      style={{ color: "var(--text-primary)" }}
+                    >
                       {lead.name}
                     </h4>
-                    <p className="text-slate-600 font-medium text-lg">
+                    <p
+                      className="font-medium text-lg"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
                       {lead.company}
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="inline-flex items-center gap-1 text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                      <span
+                        className="inline-flex items-center gap-1 text-sm px-3 py-1 rounded-full"
+                        style={{
+                          color: "var(--text-secondary)",
+                          backgroundColor: "var(--bg-primary)",
+                        }}
+                      >
                         <svg
                           className="w-3 h-3"
                           fill="none"
@@ -239,8 +264,17 @@ export default function LeadDetailPanel({
               </div>
 
               {/* Email Field */}
-              <div className="bg-white/60 border border-slate-200 rounded-2xl p-6 backdrop-blur-sm shadow-lg">
-                <label className="block text-sm font-semibold text-slate-700 mb-3">
+              <div
+                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                style={{
+                  backgroundColor: "var(--bg-secondary)",
+                  borderColor: "var(--border-primary)",
+                }}
+              >
+                <label
+                  className="block text-sm font-semibold mb-3"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                       <svg
@@ -267,11 +301,18 @@ export default function LeadDetailPanel({
                       setEmail(e.target.value);
                       setDirty(true);
                     }}
-                    className={`w-full px-4 py-3 bg-white/70 border rounded-xl text-slate-700 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:bg-white ${
+                    className={`w-full px-4 py-3 border rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 ${
                       emailValid
-                        ? "border-slate-200 focus:ring-blue-500/50 focus:border-blue-500"
+                        ? "focus:ring-blue-500/50 focus:border-blue-500"
                         : "border-red-300 focus:ring-red-500/50 focus:border-red-500"
                     }`}
+                    style={{
+                      backgroundColor: "var(--bg-primary)",
+                      borderColor: emailValid
+                        ? "var(--border-primary)"
+                        : "#fca5a5",
+                      color: "var(--text-primary)",
+                    }}
                     placeholder="Enter email address..."
                   />
                   <div className="absolute right-3 top-3">
@@ -329,8 +370,17 @@ export default function LeadDetailPanel({
               </div>
 
               {/* Status Field */}
-              <div className="bg-white/60 border border-slate-200 rounded-2xl p-6 backdrop-blur-sm shadow-lg">
-                <label className="block text-sm font-semibold text-slate-700 mb-3">
+              <div
+                className="border rounded-2xl p-6 backdrop-blur-sm shadow-lg"
+                style={{
+                  backgroundColor: "var(--bg-secondary)",
+                  borderColor: "var(--border-primary)",
+                }}
+              >
+                <label
+                  className="block text-sm font-semibold mb-3"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
                       <svg
@@ -386,17 +436,29 @@ export default function LeadDetailPanel({
                                 "100",
                                 "200"
                               )} ring-2 ring-offset-2 ring-blue-500/50 shadow-lg transform scale-105`
-                            : "bg-white/70 border-slate-200 hover:bg-white hover:shadow-md"
+                            : "hover:shadow-md"
                         }`}
+                        style={
+                          !isSelected
+                            ? {
+                                backgroundColor: "var(--bg-primary)",
+                                borderColor: "var(--border-primary)",
+                                color: "var(--text-primary)",
+                              }
+                            : {}
+                        }
                       >
                         <div className="text-center">
                           <div className="text-2xl mb-1">{config.icon}</div>
                           <div
                             className={`font-semibold ${
-                              isSelected
-                                ? config.bg.split(" ")[1]
-                                : "text-slate-700"
+                              isSelected ? config.bg.split(" ")[1] : ""
                             }`}
+                            style={
+                              !isSelected
+                                ? { color: "var(--text-primary)" }
+                                : {}
+                            }
                           >
                             {s}
                           </div>
@@ -409,7 +471,13 @@ export default function LeadDetailPanel({
 
               {/* Error Display */}
               {error && (
-                <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
+                <div
+                  className="border rounded-2xl p-4"
+                  style={{
+                    backgroundColor: "#fef2f2",
+                    borderColor: "#fecaca",
+                  }}
+                >
                   <div className="flex items-center gap-2 text-red-700">
                     <svg
                       className="w-5 h-5"
@@ -431,9 +499,13 @@ export default function LeadDetailPanel({
             </>
           ) : (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "var(--bg-primary)" }}
+              >
                 <svg
-                  className="w-10 h-10 text-slate-400"
+                  className="w-10 h-10"
+                  style={{ color: "var(--text-secondary)" }}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -446,10 +518,13 @@ export default function LeadDetailPanel({
                   />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-slate-700 mb-2">
+              <h4
+                className="text-lg font-semibold mb-2"
+                style={{ color: "var(--text-primary)" }}
+              >
                 No Lead Selected
               </h4>
-              <p className="text-slate-500">
+              <p style={{ color: "var(--text-secondary)" }}>
                 Select a lead from the table to view details
               </p>
             </div>
@@ -457,7 +532,13 @@ export default function LeadDetailPanel({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-6 border-t border-slate-200/50 bg-white/50 backdrop-blur-sm">
+        <div
+          className="p-6 border-t backdrop-blur-sm"
+          style={{
+            backgroundColor: "var(--bg-secondary)",
+            borderColor: "var(--border-secondary)",
+          }}
+        >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               {dirty && (

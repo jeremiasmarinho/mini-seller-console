@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
+/* CSS Variables for theme system */
+:root {
+  /* Light theme */
+  --bg-primary: #f8fafc;
+  --bg-secondary: rgba(255, 255, 255, 0.7);
+  --bg-gradient-from: #f8fafc;
+  --bg-gradient-via: #dbeafe;
+  --bg-gradient-to: #e0e7ff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --placeholder-color: #94a3b8;
+  --border-primary: rgba(255, 255, 255, 0.2);
+  --border-secondary: rgba(226, 232, 240, 0.5);
+
+  /* Icon backgrounds */
+  --icon-bg-blue: #dbeafe;
+  --icon-bg-emerald: #d1fae5;
+  --icon-bg-purple: #e9d5ff;
+  --icon-bg-amber: #fef3c7;
+}
+
+.dark {
+  /* Dark theme */
+  --bg-primary: #0f172a;
+  --bg-secondary: rgba(30, 41, 59, 0.7);
+  --bg-gradient-from: #0f172a;
+  --bg-gradient-via: #1e293b;
+  --bg-gradient-to: #312e81;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --placeholder-color: #e2e8f0;
+  --border-primary: rgba(71, 85, 105, 0.3);
+  --border-secondary: rgba(71, 85, 105, 0.5);
+
+  /* Icon backgrounds - white in dark mode */
+  --icon-bg-blue: #ffffff;
+  --icon-bg-emerald: #ffffff;
+  --icon-bg-purple: #ffffff;
+  --icon-bg-amber: #ffffff;
+}
+
 /* Basic animations for smooth user experience */
 @keyframes fadeInUp {
   from {
@@ -100,4 +141,9 @@
 /* Lead panel utility for mobile */
 :root.lead-panel-open .fixed:not([data-panel]) {
   display: none !important;
+}
+
+/* Custom placeholder styles for theme system */
+.dark .search-input::placeholder {
+  color: var(--placeholder-color);
 }
